@@ -1,9 +1,10 @@
-//-----Require-----//  
+//-----Require-----//
 const router = require("express").Router();
 const bookController = require("../../controllers/bookController");
 
 //-----Base Route to Find/Create-----//
-router.route("/")
+router
+  .route("/")
   .get(bookController.findAll)
   .post(bookController.create);
 

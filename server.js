@@ -18,14 +18,11 @@ if (process.env.NODE_ENV === "production") {
 //-----Allowing Routes-----//
 app.use(routes);
 
-//-----MongoDB Connect-----// 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/googlebooks",
-  {
-    useCreateIndex: true,
-    useNewUrlParser: true
-  }
-);
+//-----MongoDB Connect-----//
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
+  useCreateIndex: true,
+  useNewUrlParser: true
+});
 
 //-----Listener-----//
 app.listen(PORT, () =>
